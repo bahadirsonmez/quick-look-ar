@@ -82,17 +82,9 @@ class ViewController: UIViewController,
     
     var baseUrl = Bundle.main.bundleURL
     baseUrl.appendPathComponent("Models")
-    baseUrl.appendPathComponent("\(modelNames[modelIndex])")
-//    baseUrl.appendPathComponent(".usdz")
+    baseUrl.appendPathComponent("\(modelNames[modelIndex]).usdz")
     url = baseUrl
-
-//    guard (Bundle.main.url(
-//      forResource: modelNames[modelIndex],
-//      withExtension: "usdz") != nil) else { return }
-//    self.url = Bundle.main.url(
-//      forResource: modelNames[modelIndex],
-//      withExtension: "usdz")!
-
+    
     let previewController = QLPreviewController()
     previewController.dataSource = self
     previewController.delegate = self
@@ -109,12 +101,7 @@ extension ViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSo
   }
   
   func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-//    return url as QLPreviewItem
-    
-    guard let path = Bundle.main.path(forResource: modelNames[modelIndex], ofType: "reality") else { fatalError("Couldn't find the supported input file.") }
-    let url = URL(fileURLWithPath: path)
-    return url as QLPreviewItem
-
+    return url as QLPreviewItem    
   }
   
   

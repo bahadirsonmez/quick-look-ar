@@ -35,10 +35,10 @@ import QuickLook
 import ARKit
 
 class ViewController: UIViewController,
-  UITableViewDataSource, UITableViewDelegate {
+                      UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet var tableView: UITableView!
-
+  
   let modelNames = ["Teapot", "Gramophone", "Pig"]
   var modelImages = [UIImage]()
   var modelIndex = 0;
@@ -71,7 +71,7 @@ class ViewController: UIViewController,
     
     cell.modelImage.image = modelImages[indexPath.row]
     cell.modelName.text = modelNames[indexPath.row]
-
+    
     return cell
   }
   
@@ -90,7 +90,6 @@ class ViewController: UIViewController,
     previewController.delegate = self
     present(previewController, animated: false)
   }
-
 }
 
 // MARK: - QLPreviewControllerDataSource
@@ -101,7 +100,7 @@ extension ViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSo
   }
   
   func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-    return url as QLPreviewItem    
+    return url as QLPreviewItem
   }
   
   

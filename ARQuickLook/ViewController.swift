@@ -39,7 +39,7 @@ class ViewController: UIViewController,
   
   @IBOutlet var tableView: UITableView!
   
-  let modelNames = ["Teapot", "Gramophone", "Pig"]
+  let modelNames = ["Teapot", "Gramophone", "Pig", "Yerkure"]
   var modelImages = [UIImage]()
   var modelIndex = 0;
   var url: URL!
